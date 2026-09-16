@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GV App User Guide - Complete Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand: #4a9a8f;
+            --brand-dark: #357a6f;
+            --blue: #0d47a1;
+            --blue-light: #1565c0;
+            --green: #388e3c;
+            --green-bg: #e8f5e9;
+            --orange: #f57c00;
+            --orange-bg: #fff3e0;
+            --text: #1a1a1a;
+            --text-muted: #555;
+            --border: #e2e8f0;
+            --slide-w: 1280px;
+            --slide-h: 720px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #f1f5f9;
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Slide Container ─────────────────────────── */
+        .slide {
+            width: var(--slide-w);
+            height: var(--slide-h);
+            background: #fff;
+            margin: 24px auto;
+            padding: 40px 48px;
+            box-shadow: 0 1px 3px rgba(0,0,0,.08), 0 8px 32px rgba(0,0,0,.12);
+            border-radius: 12px;
+            display: flex;
+            position: relative;
+            page-break-after: always;
+            overflow: hidden;
+        }
+        .slide-number {
+            position: absolute;
+            bottom: 16px;
+            right: 24px;
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--text-muted);
+            letter-spacing: .5px;
+        }
+
+        /* ── Left / Right Panels ─────────────────────── */
+        .slide-left {
+            flex: 1;
+            padding-right: 36px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-width: 0;
+        }
+        .slide-right {
+            width: 375px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slide-right img {
+            width: 375px;
+            height: auto;
+            border: 2px solid #d1d5db;
+            border-radius: 24px;
+            box-shadow: 0 4px 24px rgba(0,0,0,.18);
+            object-fit: cover;
+        }
+
+        /* ── Title Slide ─────────────────────────────── */
+        .title-slide {
+            background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+            color: #fff;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .title-slide h1 { font-size: 52px; font-weight: 700; margin-bottom: 16px; color: #fff; letter-spacing: -1px; }
+        .title-slide h2 { font-size: 26px; font-weight: 400; opacity: .92; color: #fff; }
+        .title-slide p  { font-size: 16px; margin-top: 28px; opacity: .85; color: #fff; }
+
+        /* ── Section Slide ───────────────────────────── */
+        .section-slide {
+            background: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%);
+            color: #fff;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+        .section-slide h1 { font-size: 44px; font-weight: 700; margin-bottom: 12px; color: #fff; letter-spacing: -.5px; }
+        .section-slide p  { font-size: 20px; opacity: .92; color: #fff; font-weight: 300; }
+
+        /* ── Typography ──────────────────────────────── */
+        h1 { font-size: 28px; font-weight: 700; color: var(--text); margin-bottom: 12px; line-height: 1.25; letter-spacing: -.3px; }
+        h2 { font-size: 20px; font-weight: 600; color: var(--brand); margin-bottom: 8px; }
+        p  { font-size: 14px; line-height: 1.65; margin-bottom: 12px; color: #374151; }
+
+        /* ── Step Number Badge ───────────────────────── */
+        .step-number {
+            width: 44px; height: 44px;
+            background: var(--brand);
+            color: #fff;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 20px; font-weight: 700;
+            margin-bottom: 16px;
+            flex-shrink: 0;
+        }
+
+        /* ── Callout Boxes ───────────────────────────── */
+        .instruction, .tip, .data-box {
+            padding: 12px 16px;
+            margin: 10px 0;
+            border-radius: 0 8px 8px 0;
+            border-left: 4px solid;
+        }
+        .instruction { background: #f8fafc; border-color: var(--brand); }
+        .tip         { background: var(--green-bg); border-color: var(--green); }
+        .data-box    { background: var(--orange-bg); border-color: var(--orange); }
+        .instruction p { margin: 0; color: #1e293b; font-size: 13px; }
+        .tip p         { margin: 0; color: #166534; font-size: 13px; }
+        .data-box p    { margin: 0; color: #9a3412; font-size: 13px; }
+
+        /* ── Feature List ────────────────────────────── */
+        .feature-list { list-style: none; padding: 0; }
+        .feature-list li {
+            padding: 5px 0 5px 22px;
+            position: relative;
+            color: #1e293b;
+            font-size: 13px;
+        }
+        .feature-list li:before {
+            content: "✓";
+            position: absolute; left: 0;
+            color: var(--brand);
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        /* ── Print ───────────────────────────────────── */
+        @media print {
+            body { background: #fff; }
+            .slide { box-shadow: none; margin: 0; border: 1px solid #ddd; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════════
+     SECTION 1 — TITLE
+     ════════════════════════════════════════════════════════ -->
+<div class="slide title-slide">
+    <h1>GV App User Guide</h1>
+    <h2>Body, Breath &amp; Beyond</h2>
+    <p>Complete User Guide &mdash; From Registration to Exercise</p>
+    <p style="margin-top:24px;font-size:13px;opacity:.75">iPhone SE View (375&times;667) &bull; 54 Slides</p>
+</div>
+
+<!-- ════════════════════════════════════════════════════════
+     SECTION 2 — REGISTRATION
+     ════════════════════════════════════════════════════════ -->
+<div class="slide section-slide">
+    <h1>Registration Journey</h1>
+    <p>Creating your BBB account from scratch</p>
+</div>
+
+<!-- Slide 3 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">1</div>
+        <h1>Welcome &amp; Landing Page</h1>
+        <p>The first screen users see when opening the BBB app. Entry point for new and returning users.</p>
+        <div class="instruction"><p><strong>Step 1:</strong> Open the BBB app at staging-gv.muhibdev.biz.id</p></div>
+        <div class="instruction"><p><strong>Step 2:</strong> View the landing page with app branding and options</p></div>
+        <div class="tip"><p>💡 The landing page provides quick access to login or registration for new users.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/registration/01-landing.png" alt="Landing Page">
+    </div>
+    <div class="slide-number">3 / 54</div>
+</div>
+
+<!-- Slide 4 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">2</div>
+        <h1>Onboarding &mdash; Essential</h1>
+        <p>The first onboarding screen introduces users to the importance of breathing.</p>
+        <div class="instruction"><p><strong>Key Message:</strong> "How you breathe is Essential for unlocking a healthy brain, body, and mind."</p></div>
+        <div class="instruction"><p><strong>Action:</strong> Tap "Continue" to proceed to the next onboarding screen</p></div>
+        <div class="tip"><p>💡 Onboarding screens help users understand the value proposition before registering.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/registration/02-onboarding-1.png" alt="Onboarding 1">
+    </div>
+    <div class="slide-number">4 / 54</div>
+</div>
+
+<!-- Slide 5 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">3</div>
+        <h1>Onboarding &mdash; Poor Breathing</h1>
+        <p>The second onboarding screen addresses common breathing problems.</p>
+        <div class="instruction"><p><strong>Key Message:</strong> "Unfortunately for most of us Breathe poorly leading to more stress, burnout, and restless sleep."</p></div>
+        <div class="instruction"><p><strong>Action:</strong> Tap "Continue" to proceed to the next onboarding screen</p></div>
+        <div class="tip"><p>💡 This screen helps users identify with the problem before presenting the solution.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/registration/03-onboarding-2.png" alt="Onboarding 2">
+    </div>
+    <div class="slide-number">5 / 54</div>
+</div>
+
+<!-- Slide 6 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">4</div>
+        <h1>Onboarding &mdash; 5 Minutes</h1>
+        <p>The third onboarding screen emphasizes the minimal time commitment required.</p>
+        <div class="instruction"><p><strong>Key Message:</strong> "Just 5 minutes of BBB a day eliminates stress, improves sleep and boosts energy."</p></div>
+        <div class="instruction"><p><strong>Action:</strong> Tap "Continue" to proceed to the next onboarding screen</p></div>
+        <div class="tip"><p>💡 Low time commitment reduces friction for new users to get started.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/registration/04-onboarding-3.png" alt="Onboarding 3">
+    </div>
+    <div class="slide-number">6 / 54</div>
+</div>
+
+<!-- Slide 7 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">5</div>
+        <h1>Onboarding &mdash; Neuroscience</h1>
+        <p>The fourth onboarding screen adds scientific credibility to the approach.</p>
+        <div class="instruction"><p><strong>Key Message:</strong> "It's not magic, its Neuroscience — BBB rewires your nervous system in seconds."</p></div>
+        <div class="instruction"><p><strong>Action:</strong> Tap "Continue" to proceed to health goals selection</p></div>
+        <div class="tip"><p>💡 Scientific backing builds trust and credibility with users.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/registration/05-onboarding-4.png" alt="Onboarding 4">
+    </div>
+    <div class="slide-number">7 / 54</div>
+</div>
+
+<!-- Slide 8 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">6</div>
+        <h1>Health Goal Selection</h1>
+        <p>Users select their wellness goals to personalize their experience.</p>
+        <div class="instruction"><p><strong>Step 1:</strong> View available health goals (Focus, Sleep, Energy, etc.)</p></div>
+        <div class="instruction"><p><strong>Step 2:</strong> Tap on goals that apply to you (multiple selection allowed)</p></div>
+        <div class="instruction"><p><strong>Step 3:</strong> Tap "Continue" to proceed to registration form</p></div>
+        <div class="data-box"><p>📝 Selected goals help tailor course recommendations and tracking.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/registration/06-health-goals.png" alt="Health Goals">
+    </div>
+    <div class="slide-number">8 / 54</div>
+</div>
+
+<!-- Slide 9 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">7</div>
+        <h1>Registration Form</h1>
+        <p>Complete the registration form with personal details.</p>
+        <div class="instruction">
+            <p><strong>Required Fields:</strong></p>
+            <ul class="feature-list">
+                <li>Full Name</li>
+                <li>Email Address</li>
+                <li>Phone Number</li>
+                <li>Password</li>
+                <li>Date of Birth</li>
+                <li>City</li>
+            </ul>
+        </div>
+        <div class="instruction"><p><strong>Action:</strong> Fill in all fields and tap "Continue"</p></div>
+        <div class="data-box"><p>📝 All fields are required for account creation and verification.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/registration/07-registration-form.png" alt="Registration Form">
+    </div>
+    <div class="slide-number">9 / 54</div>
+</div>
+
+<!-- Slide 10 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">8</div>
+        <h1>Review &amp; Confirm Details</h1>
+        <p>Review all entered information before final submission.</p>
+        <div class="instruction"><p><strong>Step 1:</strong> Review all personal details displayed</p></div>
+        <div class="instruction"><p><strong>Step 2:</strong> Verify accuracy of name, email, phone, and other details</p></div>
+        <div class="instruction"><p><strong>Step 3:</strong> Tap "This is correct" to proceed to verification</p></div>
+        <div class="tip"><p>💡 Double-checking details prevents verification issues later.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/registration/08-review-details.png" alt="Review Details">
+    </div>
+    <div class="slide-number">10 / 54</div>
+</div>
+
+<!-- Slide 11 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">9</div>
+        <h1>Phone Verification (OTP)</h1>
+        <p>Verify your phone number with a one-time password.</p>
+        <div class="instruction"><p><strong>Step 1:</strong> Check your phone for the SMS verification code</p></div>
+        <div class="instruction"><p><strong>Step 2:</strong> Enter the 6-digit code in the provided fields</p></div>
+        <div class="instruction"><p><strong>Step 3:</strong> Tap "Verify" to complete phone verification</p></div>
+        <div class="tip"><p>💡 The OTP code expires after a few minutes. Request a new code if needed.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/registration/09-phone-otp.png" alt="Phone OTP">
+    </div>
+    <div class="slide-number">11 / 54</div>
+</div>
+
+<!-- Slide 12 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">10</div>
+        <h1>Email Verification</h1>
+        <p>Verify your email address with a one-time password.</p>
+        <div class="instruction"><p><strong>Step 1:</strong> Check your email inbox for the verification code</p></div>
+        <div class="instruction"><p><strong>Step 2:</strong> Enter the 6-digit code in the provided fields</p></div>
+        <div class="instruction"><p><strong>Step 3:</strong> Tap "Verify" to complete email verification</p></div>
+        <div class="tip"><p>💡 Check your spam folder if you don't see the verification email.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/registration/10-email-otp.png" alt="Email OTP">
+    </div>
+    <div class="slide-number">12 / 54</div>
+</div>
+
+<!-- Slide 13 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">11</div>
+        <h1>Registration Complete</h1>
+        <p>Successfully created your BBB account!</p>
+        <div class="instruction"><p><strong>Status:</strong> Your account has been created and verified</p></div>
+        <div class="instruction"><p><strong>Next Step:</strong> Tap "Let's go" to access your dashboard</p></div>
+        <div class="tip"><p>💡 You can now explore courses, track your progress, and start your breathing journey.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/registration/11-registration-complete.png" alt="Registration Complete">
+    </div>
+    <div class="slide-number">13 / 54</div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════
+     SECTION 3 — LOGIN & DASHBOARD
+     ════════════════════════════════════════════════════════ -->
+<div class="slide section-slide">
+    <h1>Login &amp; Dashboard</h1>
+    <p>Accessing your account and navigating the app</p>
+</div>
+
+<!-- Slide 15 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">1</div>
+        <h1>Login Page</h1>
+        <p>Access your existing BBB account with email and password.</p>
+        <div class="instruction"><p><strong>Step 1:</strong> Enter your registered email address</p></div>
+        <div class="instruction"><p><strong>Step 2:</strong> Enter your password</p></div>
+        <div class="instruction"><p><strong>Step 3:</strong> Tap "Sign In" to access your account</p></div>
+        <div class="tip"><p>💡 Use the "Forgot Password" link if you need to reset your password.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/login/12-login-page.png" alt="Login Page">
+    </div>
+    <div class="slide-number">15 / 54</div>
+</div>
+
+<!-- Slide 16 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">2</div>
+        <h1>Dashboard Overview</h1>
+        <p>The main dashboard provides access to all app features.</p>
+        <div class="instruction">
+            <p><strong>Key Sections:</strong></p>
+            <ul class="feature-list">
+                <li>Consistency Tracking (Streaks)</li>
+                <li>The Practice (Course Types)</li>
+                <li>Recommended Events</li>
+                <li>Testimonials</li>
+                <li>Pro Trainers</li>
+            </ul>
+        </div>
+        <div class="tip"><p>💡 The dashboard is your home base for navigating the app.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/dashboard/13-dashboard.png" alt="Dashboard">
+    </div>
+    <div class="slide-number">16 / 54</div>
+</div>
+
+<!-- Slide 17 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">3</div>
+        <h1>Health Form</h1>
+        <p>Complete your health questionnaire to personalize your experience.</p>
+        <div class="instruction"><p><strong>Purpose:</strong> Helps tailor course recommendations based on your health needs</p></div>
+        <div class="instruction"><p><strong>Step 1:</strong> Tap "Fill now" on the dashboard health form card</p></div>
+        <div class="instruction"><p><strong>Step 2:</strong> Answer all health-related questions</p></div>
+        <div class="instruction"><p><strong>Step 3:</strong> Submit the form to save your health profile</p></div>
+        <div class="data-box"><p>📝 Your health data is kept private and used only for personalization.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/dashboard/14-health-form.png" alt="Health Form">
+    </div>
+    <div class="slide-number">17 / 54</div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════
+     SECTION 4 — COURSES & CHECKOUT
+     ════════════════════════════════════════════════════════ -->
+<div class="slide section-slide">
+    <h1>Courses &amp; Checkout</h1>
+    <p>Browsing and purchasing breathing courses</p>
+</div>
+
+<!-- Slide 19 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">1</div>
+        <h1>Courses Listing</h1>
+        <p>Browse available breathing courses and workshops.</p>
+        <div class="instruction"><p><strong>Access:</strong> Tap "Courses" in the bottom navigation</p></div>
+        <div class="instruction">
+            <p><strong>Features:</strong></p>
+            <ul class="feature-list">
+                <li>View all available courses</li>
+                <li>Filter by course type (LSD, Buteyko, TRE, FM)</li>
+                <li>See course details and pricing</li>
+                <li>Check availability and schedules</li>
+            </ul>
+        </div>
+        <div class="tip"><p>💡 Course availability depends on your location and schedule.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/courses/16-courses-list.png" alt="Courses Listing">
+    </div>
+    <div class="slide-number">19 / 54</div>
+</div>
+
+<!-- Slide 20 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">2</div>
+        <h1>Course Details</h1>
+        <p>View detailed information about a specific course.</p>
+        <div class="instruction">
+            <p><strong>Information Displayed:</strong></p>
+            <ul class="feature-list">
+                <li>Course name and description</li>
+                <li>Trainer information</li>
+                <li>Date, time, and location</li>
+                <li>Pricing details</li>
+                <li>Course overview and requirements</li>
+            </ul>
+        </div>
+        <div class="instruction"><p><strong>Action:</strong> Tap "Join now" to proceed to checkout</p></div>
+        <div class="tip"><p>💡 Review all course details before proceeding to payment.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/courses/17-course-detail.png" alt="Course Details">
+    </div>
+    <div class="slide-number">20 / 54</div>
+</div>
+
+<!-- Slide 21 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">3</div>
+        <h1>Checkout Page</h1>
+        <p>Complete your course purchase with secure payment.</p>
+        <div class="instruction"><p><strong>Step 1:</strong> Review order summary (course name, price)</p></div>
+        <div class="instruction"><p><strong>Step 2:</strong> Apply promo code if available (optional)</p></div>
+        <div class="instruction">
+            <p><strong>Step 3:</strong> Select payment method:</p>
+            <ul class="feature-list">
+                <li>Payment Gateway (card/e-wallet)</li>
+                <li>QRIS (QR code payment)</li>
+            </ul>
+        </div>
+        <div class="instruction"><p><strong>Step 4:</strong> Tap "Pay Now" to complete purchase</p></div>
+        <div class="data-box"><p>📝 Payment Gateway auto-completes in staging environment.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/courses/18-checkout.png" alt="Checkout">
+    </div>
+    <div class="slide-number">21 / 54</div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════
+     SECTION 5 — PAYMENT GATEWAY
+     ════════════════════════════════════════════════════════ -->
+<div class="slide section-slide">
+    <h1>Payment Gateway Flow</h1>
+    <p>Completing payment via Payment Gateway (card/e-wallet)</p>
+</div>
+
+<!-- Slide 23 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">1</div>
+        <h1>Select Payment Gateway</h1>
+        <p>Choose Payment Gateway as your payment method.</p>
+        <div class="instruction"><p><strong>Step 1:</strong> On the checkout page, locate "Payment Method" section</p></div>
+        <div class="instruction"><p><strong>Step 2:</strong> Tap "Payment Gateway" to select it (default selection)</p></div>
+        <div class="instruction"><p><strong>Step 3:</strong> Review payment details and tap "Pay Now"</p></div>
+        <div class="tip"><p>💡 Payment Gateway supports credit/debit cards and e-wallets.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/payment-gateway/20-payment-method-selected.png" alt="Payment Method Selected">
+    </div>
+    <div class="slide-number">23 / 54</div>
+</div>
+
+<!-- Slide 24 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">2</div>
+        <h1>Mock Payment Page</h1>
+        <p>The staging environment shows a simulated payment page.</p>
+        <div class="instruction">
+            <p><strong>Information Displayed:</strong></p>
+            <ul class="feature-list">
+                <li>Reference ID (Invoice number)</li>
+                <li>Session ID</li>
+                <li>Simulated Checkout interface</li>
+            </ul>
+        </div>
+        <div class="instruction">
+            <p><strong>Actions:</strong></p>
+            <ul class="feature-list">
+                <li>"Simulate Payment Success" — Complete payment</li>
+                <li>"Cancel" — Return to checkout</li>
+            </ul>
+        </div>
+        <div class="data-box"><p>📝 In production, this would be the real Xendit payment page.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/payment-gateway/21-mock-payment.png" alt="Mock Payment">
+    </div>
+    <div class="slide-number">24 / 54</div>
+</div>
+
+<!-- Slide 25 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">3</div>
+        <h1>Payment Success</h1>
+        <p>Payment completed successfully!</p>
+        <div class="instruction"><p><strong>Status:</strong> Your payment has been processed</p></div>
+        <div class="instruction"><p><strong>Next Step:</strong> Tap "Check upcoming activity" to view your purchased course</p></div>
+        <div class="tip"><p>💡 Your course is now unlocked and available in your activity section.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/payment-gateway/22-payment-success.png" alt="Payment Success">
+    </div>
+    <div class="slide-number">25 / 54</div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════
+     SECTION 6 — QRIS PAYMENT
+     ════════════════════════════════════════════════════════ -->
+<div class="slide section-slide">
+    <h1>QRIS Payment Flow</h1>
+    <p>Completing payment via QR code (Indonesian standard)</p>
+</div>
+
+<!-- Slide 27 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">1</div>
+        <h1>Select QRIS Payment</h1>
+        <p>Choose QRIS as your payment method.</p>
+        <div class="instruction"><p><strong>Step 1:</strong> On the checkout page, locate "Payment Method" section</p></div>
+        <div class="instruction"><p><strong>Step 2:</strong> Tap "QRIS" to select QR code payment</p></div>
+        <div class="instruction"><p><strong>Step 3:</strong> Review payment details and tap "Pay Now"</p></div>
+        <div class="tip"><p>💡 QRIS allows instant payment via QR code scanning from any Indonesian bank.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/qris/23-qris-selected.png" alt="QRIS Selected">
+    </div>
+    <div class="slide-number">27 / 54</div>
+</div>
+
+<!-- Slide 28 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">2</div>
+        <h1>QR Code Display</h1>
+        <p>View the QR code for payment.</p>
+        <div class="instruction">
+            <p><strong>Information Displayed:</strong></p>
+            <ul class="feature-list">
+                <li>Total Payment amount</li>
+                <li>Bank details (BCA)</li>
+                <li>Account number and name</li>
+                <li>QR code image</li>
+            </ul>
+        </div>
+        <div class="instruction">
+            <p><strong>Actions:</strong></p>
+            <ul class="feature-list">
+                <li>"Download QR" — Save QR image</li>
+                <li>"I have paid" — Confirm payment</li>
+            </ul>
+        </div>
+        <div class="data-box"><p>📝 Invoice status is PENDING until admin approval.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/qris/24-qr-code.png" alt="QR Code">
+    </div>
+    <div class="slide-number">28 / 54</div>
+</div>
+
+<!-- Slide 29 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">3</div>
+        <h1>Download QR Code</h1>
+        <p>Save the QR code image for sharing or later use.</p>
+        <div class="instruction"><p><strong>Step 1:</strong> Tap "Download QR" button</p></div>
+        <div class="instruction"><p><strong>Step 2:</strong> QR image opens in new tab</p></div>
+        <div class="instruction"><p><strong>Step 3:</strong> Save the image to your device</p></div>
+        <div class="tip"><p>💡 The downloaded QR includes branded design for sharing.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/qris/25-download-qr.png" alt="Download QR">
+    </div>
+    <div class="slide-number">29 / 54</div>
+</div>
+
+<!-- Slide 30 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">4</div>
+        <h1>Pending Payment Status</h1>
+        <p>After clicking "I have paid", the payment shows as pending.</p>
+        <div class="instruction"><p><strong>Status:</strong> Payment is PENDING admin approval</p></div>
+        <div class="instruction">
+            <p><strong>Details:</strong></p>
+            <ul class="feature-list">
+                <li>Invoice number</li>
+                <li>Payment method</li>
+                <li>Expiration time</li>
+                <li>QR code for reference</li>
+            </ul>
+        </div>
+        <div class="instruction">
+            <p><strong>Options:</strong></p>
+            <ul class="feature-list">
+                <li>"Download QR" — Save QR again</li>
+                <li>"Report via WhatsApp" — Contact support</li>
+            </ul>
+        </div>
+        <div class="data-box"><p>📝 Admin typically confirms payment within 1-2 hours.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/qris/26-pending-status.png" alt="Pending Status">
+    </div>
+    <div class="slide-number">30 / 54</div>
+</div>
+
+<!-- Slide 31 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">5</div>
+        <h1>Purchase History</h1>
+        <p>View all your purchases and their status.</p>
+        <div class="instruction"><p><strong>Access:</strong> Tap "Purchase History" link or navigate to profile</p></div>
+        <div class="instruction">
+            <p><strong>Information Displayed:</strong></p>
+            <ul class="feature-list">
+                <li>Course name and type</li>
+                <li>Payment method</li>
+                <li>Invoice number</li>
+                <li>Status (Pending/Paid/Expired)</li>
+                <li>Amount paid</li>
+            </ul>
+        </div>
+        <div class="tip"><p>💡 Tap "Details" to expand and see full payment information.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/qris/27-purchase-history-pending.png" alt="Purchase History">
+    </div>
+    <div class="slide-number">31 / 54</div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════
+     SECTION 7 — ADMIN APPROVAL
+     ════════════════════════════════════════════════════════ -->
+<div class="slide section-slide">
+    <h1>Admin Approval Process</h1>
+    <p>How admins approve QRIS payments</p>
+</div>
+
+<!-- Slide 33 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">1</div>
+        <h1>Admin Dashboard Login</h1>
+        <p>Access the admin dashboard to manage payments.</p>
+        <div class="instruction"><p><strong>URL:</strong> staging-dashboard-gv.muhibdev.biz.id/login</p></div>
+        <div class="instruction"><p><strong>Step 1:</strong> Enter admin email address</p></div>
+        <div class="instruction"><p><strong>Step 2:</strong> Enter admin password</p></div>
+        <div class="instruction"><p><strong>Step 3:</strong> Tap "Sign in" to access dashboard</p></div>
+        <div class="tip"><p>💡 Admin credentials are separate from user accounts.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/admin/28-admin-login.png" alt="Admin Login">
+    </div>
+    <div class="slide-number">33 / 54</div>
+</div>
+
+<!-- Slide 34 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">2</div>
+        <h1>Payment Status Page</h1>
+        <p>View all user payments and their status.</p>
+        <div class="instruction"><p><strong>Access:</strong> Navigate to Payments &rarr; User Payment Status</p></div>
+        <div class="instruction">
+            <p><strong>Table Columns:</strong></p>
+            <ul class="feature-list">
+                <li>User Detail (name, email)</li>
+                <li>Sending Method</li>
+                <li>Bought Items</li>
+                <li>Total Payments</li>
+                <li>Status (Pending/Paid/Expired)</li>
+                <li>Action (View details)</li>
+            </ul>
+        </div>
+        <div class="tip"><p>💡 Use the search box to find specific users by email.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/admin/29-payment-status-page.png" alt="Payment Status">
+    </div>
+    <div class="slide-number">34 / 54</div>
+</div>
+
+<!-- Slide 35 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">3</div>
+        <h1>Search for User</h1>
+        <p>Find specific user payments by email.</p>
+        <div class="instruction"><p><strong>Step 1:</strong> Locate the search box at the top</p></div>
+        <div class="instruction"><p><strong>Step 2:</strong> Enter user email address</p></div>
+        <div class="instruction"><p><strong>Step 3:</strong> View filtered results showing only that user's payments</p></div>
+        <div class="data-box"><p>📝 Search is real-time and filters as you type.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/admin/30-search-user.png" alt="Search User">
+    </div>
+    <div class="slide-number">35 / 54</div>
+</div>
+
+<!-- Slide 36 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">4</div>
+        <h1>Payment Detail Dialog</h1>
+        <p>View detailed information about a specific payment.</p>
+        <div class="instruction">
+            <p><strong>Information Displayed:</strong></p>
+            <ul class="feature-list">
+                <li>Invoice number</li>
+                <li>Status (Pending/Paid/Expired)</li>
+                <li>Date and time</li>
+                <li>Payment method</li>
+                <li>Course details and pricing</li>
+                <li>Bank information</li>
+                <li>User details</li>
+            </ul>
+        </div>
+        <div class="instruction">
+            <p><strong>Actions:</strong></p>
+            <ul class="feature-list">
+                <li>"Confirm Payment" — Approve payment</li>
+                <li>"Close" — Return to list</li>
+            </ul>
+        </div>
+        <div class="data-box"><p>📝 Payment approval is irreversible.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/admin/31-payment-detail.png" alt="Payment Detail">
+    </div>
+    <div class="slide-number">36 / 54</div>
+</div>
+
+<!-- Slide 37 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">5</div>
+        <h1>Payment Approved</h1>
+        <p>Payment status updated to "Paid".</p>
+        <div class="instruction"><p><strong>Step 1:</strong> Click "Confirm Payment" in the detail dialog</p></div>
+        <div class="instruction"><p><strong>Step 2:</strong> Confirm the action in the popup</p></div>
+        <div class="instruction"><p><strong>Step 3:</strong> Status changes from "Pending" to "Paid"</p></div>
+        <div class="tip"><p>💡 The user's course access is unlocked immediately after approval.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/admin/32-payment-approved.png" alt="Payment Approved">
+    </div>
+    <div class="slide-number">37 / 54</div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════
+     SECTION 8 — EXERCISE
+     ════════════════════════════════════════════════════════ -->
+<div class="slide section-slide">
+    <h1>Exercise Flow</h1>
+    <p>Starting and completing breathing exercises</p>
+</div>
+
+<!-- Slide 39 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">1</div>
+        <h1>Exercise Start</h1>
+        <p>Begin your breathing exercise session.</p>
+        <div class="instruction">
+            <p><strong>Exercise Info:</strong></p>
+            <ul class="feature-list">
+                <li>Exercise name (e.g., "Active 5")</li>
+                <li>Cycle indicators showing phases</li>
+                <li>Phase targets (BOLT, AIM, VLB)</li>
+            </ul>
+        </div>
+        <div class="instruction"><p><strong>Action:</strong> Tap "Start" to begin the exercise</p></div>
+        <div class="tip"><p>💡 Each exercise has multiple cycles with increasing difficulty.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/exercise/33-exercise-start.png" alt="Exercise Start">
+    </div>
+    <div class="slide-number">39 / 54</div>
+</div>
+
+<!-- Slide 40 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">2</div>
+        <h1>Exercise Preference</h1>
+        <p>Configure your exercise settings before starting.</p>
+        <div class="instruction">
+            <p><strong>Settings:</strong></p>
+            <ul class="feature-list">
+                <li>Soundscape (On/Off)</li>
+                <li>Vibration (On/Off)</li>
+                <li>Voice Guide (On/Off)</li>
+                <li>Buteyko Belt (On/Off)</li>
+            </ul>
+        </div>
+        <div class="instruction"><p><strong>Note:</strong> These preferences are asked once per exercise and can be changed anytime.</p></div>
+        <div class="instruction"><p><strong>Action:</strong> Tap "Submit" to start the exercise</p></div>
+        <div class="tip"><p>💡 Voice Guide is recommended for beginners to follow along.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/exercise/34-exercise-preference.png" alt="Exercise Preference">
+    </div>
+    <div class="slide-number">40 / 54</div>
+</div>
+
+<!-- Slide 41 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">3</div>
+        <h1>Exercise Player</h1>
+        <p>Follow your guided breathing exercise.</p>
+        <div class="instruction">
+            <p><strong>Interface Elements:</strong></p>
+            <ul class="feature-list">
+                <li>Exercise title (e.g., "Active 5")</li>
+                <li>Cycle and phase indicators</li>
+                <li>BOLT score display</li>
+                <li>Timer showing current count</li>
+            </ul>
+        </div>
+        <div class="instruction">
+            <p><strong>Actions:</strong></p>
+            <ul class="feature-list">
+                <li>Follow audio/visual breathing cues</li>
+                <li>Tap "Stop" to end early if needed</li>
+                <li>Complete the session for best results</li>
+            </ul>
+        </div>
+        <div class="tip"><p>💡 BOLT (Body Oxygen Level Test) measures your breathing efficiency.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/exercise/35-exercise-player.png" alt="Exercise Player">
+    </div>
+    <div class="slide-number">41 / 54</div>
+</div>
+
+<!-- Slide 42 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">4</div>
+        <h1>Exercise Complete</h1>
+        <p>Review your session and add notes.</p>
+        <div class="instruction">
+            <p><strong>Completion Screen:</strong></p>
+            <ul class="feature-list">
+                <li>Flower visualization animation</li>
+                <li>Session duration in minutes</li>
+                <li>Current streak count</li>
+                <li>Total sessions completed</li>
+            </ul>
+        </div>
+        <div class="instruction">
+            <p><strong>Journal Entry:</strong></p>
+            <ul class="feature-list">
+                <li>Write how you feel after the exercise</li>
+                <li>Notes are saved with your session</li>
+                <li>Viewable later in Journal History</li>
+            </ul>
+        </div>
+        <div class="tip"><p>💡 Regular journaling helps track your progress over time.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/exercise/36-exercise-finish.png" alt="Exercise Complete">
+    </div>
+    <div class="slide-number">42 / 54</div>
+</div>
+
+<!-- Slide 43 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">5</div>
+        <h1>Submit Journal</h1>
+        <p>Save your exercise notes and results.</p>
+        <div class="instruction">
+            <p><strong>After Writing:</strong></p>
+            <ul class="feature-list">
+                <li>Review your journal entry</li>
+                <li>Tap "Submit" to save your results</li>
+                <li>Share your progress with friends</li>
+            </ul>
+        </div>
+        <div class="instruction">
+            <p><strong>What Gets Saved:</strong></p>
+            <ul class="feature-list">
+                <li>Exercise type and duration</li>
+                <li>BOLT scores and cycle results</li>
+                <li>Your personal journal notes</li>
+            </ul>
+        </div>
+        <div class="tip"><p>💡 Your journal entries help build your exercise history.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/exercise/37-exercise-journal-submit.png" alt="Submit Journal">
+    </div>
+    <div class="slide-number">43 / 54</div>
+</div>
+
+<!-- Slide 44 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">6</div>
+        <h1>Consistency Tracking</h1>
+        <p>Monitor your exercise streaks and progress.</p>
+        <div class="instruction">
+            <p><strong>BOLT Chart:</strong></p>
+            <ul class="feature-list">
+                <li>Average BOLT score over 30 days</li>
+                <li>Visual progress trend</li>
+                <li>Daily mean calculations</li>
+            </ul>
+        </div>
+        <div class="instruction">
+            <p><strong>Exercise History:</strong></p>
+            <ul class="feature-list">
+                <li>List of all completed sessions</li>
+                <li>Date and time of each exercise</li>
+                <li>BOLT, AIM, and OBH scores</li>
+                <li>Color-coded performance indicators</li>
+            </ul>
+        </div>
+        <div class="tip"><p>💡 Consistent practice leads to better BOLT scores over time.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/consistency/38-consistency.png" alt="Consistency Tracking">
+    </div>
+    <div class="slide-number">44 / 54</div>
+</div>
+
+<!-- Slide 45 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">7</div>
+        <h1>Journal History</h1>
+        <p>Review all your exercise notes and reflections.</p>
+        <div class="instruction">
+            <p><strong>Journal List:</strong></p>
+            <ul class="feature-list">
+                <li>All journal entries sorted by date</li>
+                <li>Search across all your notes</li>
+                <li>Filter by course type (Buteyko, LSD, etc.)</li>
+            </ul>
+        </div>
+        <div class="instruction">
+            <p><strong>Each Entry Shows:</strong></p>
+            <ul class="feature-list">
+                <li>Journal title with date and session</li>
+                <li>Preview of your notes</li>
+                <li>Course type badge</li>
+            </ul>
+        </div>
+        <div class="tip"><p>💡 Tap any entry to view or edit your full notes.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/journal/39-journal-list.png" alt="Journal History">
+    </div>
+    <div class="slide-number">45 / 54</div>
+</div>
+
+<!-- Slide 46 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">8</div>
+        <h1>Journal Detail</h1>
+        <p>View and edit individual journal entries.</p>
+        <div class="instruction">
+            <p><strong>Entry Details:</strong></p>
+            <ul class="feature-list">
+                <li>Full journal title with date</li>
+                <li>Complete journal text</li>
+                <li>Last edited timestamp</li>
+                <li>Course type badge</li>
+            </ul>
+        </div>
+        <div class="instruction">
+            <p><strong>Actions:</strong></p>
+            <ul class="feature-list">
+                <li>Tap "Edit Notes" to modify your entry</li>
+                <li>Save changes with "Save Notes"</li>
+                <li>Track your progress over time</li>
+            </ul>
+        </div>
+        <div class="tip"><p>💡 Editing notes helps you refine your observations.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/journal/40-journal-detail.png" alt="Journal Detail">
+    </div>
+    <div class="slide-number">46 / 54</div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════
+     SECTION 9 — PROFILE & SETTINGS
+     ════════════════════════════════════════════════════════ -->
+<div class="slide section-slide">
+    <h1>Profile &amp; Settings</h1>
+    <p>Managing your account and preferences</p>
+</div>
+
+<!-- Slide 48 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">1</div>
+        <h1>Profile Page</h1>
+        <p>Access your profile and account settings.</p>
+        <div class="instruction"><p><strong>Access:</strong> Tap "Profile" in the bottom navigation</p></div>
+        <div class="instruction">
+            <p><strong>Available Options:</strong></p>
+            <ul class="feature-list">
+                <li>Profile Detail</li>
+                <li>Journal Notes</li>
+                <li>Change Password</li>
+                <li>Device Sessions</li>
+                <li>Purchase History</li>
+                <li>FAQ</li>
+                <li>Contact Us</li>
+                <li>Logout</li>
+            </ul>
+        </div>
+        <div class="tip"><p>💡 The profile page is your hub for account management.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/profile/35-profile-page.png" alt="Profile Page">
+    </div>
+    <div class="slide-number">48 / 54</div>
+</div>
+
+<!-- Slide 49 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">2</div>
+        <h1>Profile Detail</h1>
+        <p>View and manage your personal information.</p>
+        <div class="instruction">
+            <p><strong>Information Displayed:</strong></p>
+            <ul class="feature-list">
+                <li>Name</li>
+                <li>Phone Number</li>
+                <li>Email</li>
+                <li>City</li>
+            </ul>
+        </div>
+        <div class="instruction">
+            <p><strong>Actions:</strong></p>
+            <ul class="feature-list">
+                <li>Edit profile information</li>
+                <li>Delete account (if needed)</li>
+            </ul>
+        </div>
+        <div class="data-box"><p>📝 Account deletion is permanent and cannot be undone.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/profile/36-profile-detail.png" alt="Profile Detail">
+    </div>
+    <div class="slide-number">49 / 54</div>
+</div>
+
+<!-- Slide 50 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">3</div>
+        <h1>Trainers List</h1>
+        <p>Browse available breathing instructors.</p>
+        <div class="instruction">
+            <p><strong>Features:</strong></p>
+            <ul class="feature-list">
+                <li>Search trainers by name</li>
+                <li>View trainer profiles</li>
+                <li>See trainer specializations</li>
+            </ul>
+        </div>
+        <div class="instruction"><p><strong>Action:</strong> Tap on a trainer to view their profile</p></div>
+        <div class="tip"><p>💡 Each trainer specializes in different breathing techniques.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/profile/37-trainers-list.png" alt="Trainers List">
+    </div>
+    <div class="slide-number">50 / 54</div>
+</div>
+
+<!-- Slide 51 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">4</div>
+        <h1>Trainer Profile</h1>
+        <p>View detailed information about a specific trainer.</p>
+        <div class="instruction">
+            <p><strong>Information Displayed:</strong></p>
+            <ul class="feature-list">
+                <li>Trainer photo</li>
+                <li>Name and title</li>
+                <li>Specialization</li>
+                <li>Overview and experience</li>
+            </ul>
+        </div>
+        <div class="instruction"><p><strong>Action:</strong> Contact trainer via WhatsApp for questions</p></div>
+        <div class="tip"><p>💡 Trainers can provide personalized guidance for your practice.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/profile/38-trainer-profile.png" alt="Trainer Profile">
+    </div>
+    <div class="slide-number">51 / 54</div>
+</div>
+
+<!-- Slide 52 -->
+<div class="slide">
+    <div class="slide-left">
+        <div class="step-number">5</div>
+        <h1>FAQ</h1>
+        <p>Find answers to frequently asked questions.</p>
+        <div class="instruction">
+            <p><strong>Features:</strong></p>
+            <ul class="feature-list">
+                <li>Search questions</li>
+                <li>Filter by course type</li>
+                <li>Expandable answers</li>
+            </ul>
+        </div>
+        <div class="instruction">
+            <p><strong>Common Topics:</strong></p>
+            <ul class="feature-list">
+                <li>Course structure</li>
+                <li>Payment methods</li>
+                <li>Prerequisites</li>
+                <li>Refund policy</li>
+            </ul>
+        </div>
+        <div class="tip"><p>💡 Check FAQ before contacting support for quick answers.</p></div>
+    </div>
+    <div class="slide-right">
+        <img src="screenshots/profile/40-faq.png" alt="FAQ">
+    </div>
+    <div class="slide-number">52 / 54</div>
+</div>
+
+</body>
+</html>
