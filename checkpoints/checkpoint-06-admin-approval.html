@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GV App User Guide - Admin Approval</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+        .slide {
+            width: 1280px;
+            height: 720px;
+            background: white;
+            margin: 20px auto;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            display: flex;
+            position: relative;
+            page-break-after: always;
+        }
+        .slide-number {
+            position: absolute;
+            bottom: 20px;
+            right: 30px;
+            font-size: 12px;
+            color: #999;
+        }
+        .slide-left {
+            flex: 1;
+            padding-right: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .slide-right {
+            width: 375px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slide-right img {
+            max-width: 100%;
+            max-height: 667px;
+            border: 2px solid #ddd;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .title-slide {
+            background: linear-gradient(135deg, #5AB0A1 0%, #3d8b7f 100%);
+            color: white;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .title-slide h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .title-slide h2 {
+            font-size: 28px;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+        .title-slide p {
+            font-size: 18px;
+            margin-top: 30px;
+            opacity: 0.8;
+        }
+        .section-slide {
+            background: linear-gradient(135deg, #0F5590 0%, #1a73c7 100%);
+            color: white;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+        .section-slide h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+        .section-slide p {
+            font-size: 22px;
+            opacity: 0.9;
+        }
+        h1 {
+            font-size: 32px;
+            color: #222831;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        h2 {
+            font-size: 24px;
+            color: #5AB0A1;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #555;
+        }
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: #5AB0A1;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .instruction {
+            background: #f8f9fa;
+            border-left: 4px solid #5AB0A1;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .instruction p {
+            margin: 0;
+            color: #333;
+        }
+        .tip {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip p {
+            margin: 0;
+            color: #2e7d32;
+        }
+        .data-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .data-box p {
+            margin: 0;
+            color: #e65100;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #5AB0A1;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Slide 1: Title -->
+    <div class="slide title-slide">
+        <h1>GV App User Guide</h1>
+        <h2>Body, Breath & Beyond</h2>
+        <p>Admin Approval Process</p>
+        <p style="margin-top: 50px; font-size: 14px;">iPhone SE View (375×667)</p>
+    </div>
+
+    <!-- Slide 2: Admin Login -->
+    <div class="slide">
+        <div class="slide-left">
+            <div class="step-number">1</div>
+            <h1>Admin Dashboard Login</h1>
+            <p>Access the admin dashboard to manage payments.</p>
+            
+            <div class="instruction">
+                <p><strong>URL:</strong> staging-dashboard-gv.muhibdev.biz.id/login</p>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Step 1:</strong> Enter admin email address</p>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Step 2:</strong> Enter admin password</p>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Step 3:</strong> Tap "Sign in" to access dashboard</p>
+            </div>
+            
+            <div class="tip">
+                <p>💡 Admin credentials are separate from user accounts.</p>
+            </div>
+        </div>
+        <div class="slide-right">
+            <img src="../screenshots/admin/28-admin-login.png" alt="Admin Login">
+        </div>
+        <div class="slide-number">2 / 5</div>
+    </div>
+
+    <!-- Slide 3: Payment Status Page -->
+    <div class="slide">
+        <div class="slide-left">
+            <div class="step-number">2</div>
+            <h1>Payment Status Page</h1>
+            <p>View all user payments and their status.</p>
+            
+            <div class="instruction">
+                <p><strong>Access:</strong> Navigate to Payments → User Payment Status</p>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Table Columns:</strong></p>
+                <ul class="feature-list">
+                    <li>User Detail (name, email)</li>
+                    <li>Sending Method</li>
+                    <li>Bought Items</li>
+                    <li>Total Payments</li>
+                    <li>Status (Pending/Paid/Expired)</li>
+                    <li>Action (View details)</li>
+                </ul>
+            </div>
+            
+            <div class="tip">
+                <p>💡 Use the search box to find specific users by email.</p>
+            </div>
+        </div>
+        <div class="slide-right">
+            <img src="../screenshots/admin/29-payment-status-page.png" alt="Payment Status">
+        </div>
+        <div class="slide-number">3 / 5</div>
+    </div>
+
+    <!-- Slide 4: Search User -->
+    <div class="slide">
+        <div class="slide-left">
+            <div class="step-number">3</div>
+            <h1>Search for User</h1>
+            <p>Find specific user payments by email.</p>
+            
+            <div class="instruction">
+                <p><strong>Step 1:</strong> Locate the search box at the top</p>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Step 2:</strong> Enter user email address</p>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Step 3:</strong> View filtered results showing only that user's payments</p>
+            </div>
+            
+            <div class="data-box">
+                <p>📝 Search is real-time and filters as you type.</p>
+            </div>
+        </div>
+        <div class="slide-right">
+            <img src="../screenshots/admin/30-search-user.png" alt="Search User">
+        </div>
+        <div class="slide-number">4 / 5</div>
+    </div>
+
+    <!-- Slide 5: Payment Detail -->
+    <div class="slide">
+        <div class="slide-left">
+            <div class="step-number">4</div>
+            <h1>Payment Detail Dialog</h1>
+            <p>View detailed information about a specific payment.</p>
+            
+            <div class="instruction">
+                <p><strong>Information Displayed:</strong></p>
+                <ul class="feature-list">
+                    <li>Invoice number</li>
+                    <li>Status (Pending)</li>
+                    <li>Date and time</li>
+                    <li>Payment method</li>
+                    <li>Course details and pricing</li>
+                    <li>Bank information</li>
+                    <li>User details</li>
+                </ul>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Actions:</strong></p>
+                <ul class="feature-list">
+                    <li>"Confirm Payment" - Approve payment</li>
+                    <li>"Close" - Return to list</li>
+                </ul>
+            </div>
+            
+            <div class="data-box">
+                <p>📝 Payment approval is irreversible.</p>
+            </div>
+        </div>
+        <div class="slide-right">
+            <img src="../screenshots/admin/31-payment-detail.png" alt="Payment Detail">
+        </div>
+        <div class="slide-number">5 / 5</div>
+    </div>
+
+    <!-- Slide 6: Payment Approved -->
+    <div class="slide">
+        <div class="slide-left">
+            <div class="step-number">5</div>
+            <h1>Payment Approved</h1>
+            <p>Payment status updated to "Paid".</p>
+            
+            <div class="instruction">
+                <p><strong>Step 1:</strong> Click "Confirm Payment" in the detail dialog</p>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Step 2:</strong> Confirm the action in the popup</p>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Step 3:</strong> Status changes from "Pending" to "Paid"</p>
+            </div>
+            
+            <div class="tip">
+                <p>💡 The user's course access is unlocked immediately after approval.</p>
+            </div>
+        </div>
+        <div class="slide-right">
+            <img src="../screenshots/admin/32-payment-approved.png" alt="Payment Approved">
+        </div>
+        <div class="slide-number">5 / 5</div>
+    </div>
+</body>
+</html>

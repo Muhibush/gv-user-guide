@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GV App User Guide - QRIS Payment Flow</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+        .slide {
+            width: 1280px;
+            height: 720px;
+            background: white;
+            margin: 20px auto;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            display: flex;
+            position: relative;
+            page-break-after: always;
+        }
+        .slide-number {
+            position: absolute;
+            bottom: 20px;
+            right: 30px;
+            font-size: 12px;
+            color: #999;
+        }
+        .slide-left {
+            flex: 1;
+            padding-right: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .slide-right {
+            width: 375px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slide-right img {
+            max-width: 100%;
+            max-height: 667px;
+            border: 2px solid #ddd;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .title-slide {
+            background: linear-gradient(135deg, #5AB0A1 0%, #3d8b7f 100%);
+            color: white;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .title-slide h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .title-slide h2 {
+            font-size: 28px;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+        .title-slide p {
+            font-size: 18px;
+            margin-top: 30px;
+            opacity: 0.8;
+        }
+        .section-slide {
+            background: linear-gradient(135deg, #0F5590 0%, #1a73c7 100%);
+            color: white;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+        .section-slide h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+        .section-slide p {
+            font-size: 22px;
+            opacity: 0.9;
+        }
+        h1 {
+            font-size: 32px;
+            color: #222831;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        h2 {
+            font-size: 24px;
+            color: #5AB0A1;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #555;
+        }
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: #5AB0A1;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .instruction {
+            background: #f8f9fa;
+            border-left: 4px solid #5AB0A1;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .instruction p {
+            margin: 0;
+            color: #333;
+        }
+        .tip {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip p {
+            margin: 0;
+            color: #2e7d32;
+        }
+        .data-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .data-box p {
+            margin: 0;
+            color: #e65100;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #5AB0A1;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Slide 1: Title -->
+    <div class="slide title-slide">
+        <h1>GV App User Guide</h1>
+        <h2>Body, Breath & Beyond</h2>
+        <p>QRIS Payment Flow</p>
+        <p style="margin-top: 50px; font-size: 14px;">iPhone SE View (375×667)</p>
+    </div>
+
+    <!-- Slide 2: QRIS Selected -->
+    <div class="slide">
+        <div class="slide-left">
+            <div class="step-number">1</div>
+            <h1>Select QRIS Payment</h1>
+            <p>Choose QRIS as your payment method.</p>
+            
+            <div class="instruction">
+                <p><strong>Step 1:</strong> On the checkout page, locate "Payment Method" section</p>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Step 2:</strong> Tap "QRIS" to select QR code payment</p>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Step 3:</strong> Review payment details and tap "Pay Now"</p>
+            </div>
+            
+            <div class="tip">
+                <p>💡 QRIS allows instant payment via QR code scanning from any Indonesian bank.</p>
+            </div>
+        </div>
+        <div class="slide-right">
+            <img src="../screenshots/qris/23-qris-selected.png" alt="QRIS Selected">
+        </div>
+        <div class="slide-number">2 / 5</div>
+    </div>
+
+    <!-- Slide 3: QR Code Page -->
+    <div class="slide">
+        <div class="slide-left">
+            <div class="step-number">2</div>
+            <h1>QR Code Display</h1>
+            <p>View the QR code for payment.</p>
+            
+            <div class="instruction">
+                <p><strong>Information Displayed:</strong></p>
+                <ul class="feature-list">
+                    <li>Total Payment amount</li>
+                    <li>Bank details (BCA)</li>
+                    <li>Account number and name</li>
+                    <li>QR code image</li>
+                </ul>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Actions:</strong></p>
+                <ul class="feature-list">
+                    <li>"Download QR" - Save QR image</li>
+                    <li>"I have paid" - Confirm payment</li>
+                </ul>
+            </div>
+            
+            <div class="data-box">
+                <p>📝 Invoice status is PENDING until admin approval.</p>
+            </div>
+        </div>
+        <div class="slide-right">
+            <img src="../screenshots/qris/24-qr-code.png" alt="QR Code">
+        </div>
+        <div class="slide-number">3 / 5</div>
+    </div>
+
+    <!-- Slide 4: Download QR -->
+    <div class="slide">
+        <div class="slide-left">
+            <div class="step-number">3</div>
+            <h1>Download QR Code</h1>
+            <p>Save the QR code image for sharing or later use.</p>
+            
+            <div class="instruction">
+                <p><strong>Step 1:</strong> Tap "Download QR" button</p>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Step 2:</strong> QR image opens in new tab</p>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Step 3:</strong> Save the image to your device</p>
+            </div>
+            
+            <div class="tip">
+                <p>💡 The downloaded QR includes branded design for sharing.</p>
+            </div>
+        </div>
+        <div class="slide-right">
+            <img src="../screenshots/qris/25-download-qr.png" alt="Download QR">
+        </div>
+        <div class="slide-number">4 / 5</div>
+    </div>
+
+    <!-- Slide 5: Pending Status -->
+    <div class="slide">
+        <div class="slide-left">
+            <div class="step-number">4</div>
+            <h1>Pending Payment Status</h1>
+            <p>After clicking "I have paid", the payment shows as pending.</p>
+            
+            <div class="instruction">
+                <p><strong>Status:</strong> Payment is PENDING admin approval</p>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Details:</strong></p>
+                <ul class="feature-list">
+                    <li>Invoice number</li>
+                    <li>Payment method</li>
+                    <li>Expiration time</li>
+                    <li>QR code for reference</li>
+                </ul>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Options:</strong></p>
+                <ul class="feature-list">
+                    <li>"Download QR" - Save QR again</li>
+                    <li>"Report via WhatsApp" - Contact support</li>
+                </ul>
+            </div>
+            
+            <div class="data-box">
+                <p>📝 Admin typically confirms payment within 1-2 hours.</p>
+            </div>
+        </div>
+        <div class="slide-right">
+            <img src="../screenshots/qris/26-pending-status.png" alt="Pending Status">
+        </div>
+        <div class="slide-number">5 / 5</div>
+    </div>
+
+    <!-- Slide 6: Purchase History -->
+    <div class="slide">
+        <div class="slide-left">
+            <div class="step-number">5</div>
+            <h1>Purchase History</h1>
+            <p>View all your purchases and their status.</p>
+            
+            <div class="instruction">
+                <p><strong>Access:</strong> Tap "Purchase History" link or navigate to profile</p>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Information Displayed:</strong></p>
+                <ul class="feature-list">
+                    <li>Course name and type</li>
+                    <li>Payment method</li>
+                    <li>Invoice number</li>
+                    <li>Status (Pending/Paid/Expired)</li>
+                    <li>Amount paid</li>
+                </ul>
+            </div>
+            
+            <div class="tip">
+                <p>💡 Tap "Details" to expand and see full payment information.</p>
+            </div>
+        </div>
+        <div class="slide-right">
+            <img src="../screenshots/qris/27-purchase-history-pending.png" alt="Purchase History">
+        </div>
+        <div class="slide-number">5 / 5</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GV App User Guide - Profile & Settings</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+        .slide {
+            width: 1280px;
+            height: 720px;
+            background: white;
+            margin: 20px auto;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            display: flex;
+            position: relative;
+            page-break-after: always;
+        }
+        .slide-number {
+            position: absolute;
+            bottom: 20px;
+            right: 30px;
+            font-size: 12px;
+            color: #999;
+        }
+        .slide-left {
+            flex: 1;
+            padding-right: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .slide-right {
+            width: 375px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slide-right img {
+            max-width: 100%;
+            max-height: 667px;
+            border: 2px solid #ddd;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .title-slide {
+            background: linear-gradient(135deg, #5AB0A1 0%, #3d8b7f 100%);
+            color: white;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .title-slide h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .title-slide h2 {
+            font-size: 28px;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+        .title-slide p {
+            font-size: 18px;
+            margin-top: 30px;
+            opacity: 0.8;
+        }
+        .section-slide {
+            background: linear-gradient(135deg, #0F5590 0%, #1a73c7 100%);
+            color: white;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+        .section-slide h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+        .section-slide p {
+            font-size: 22px;
+            opacity: 0.9;
+        }
+        h1 {
+            font-size: 32px;
+            color: #222831;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        h2 {
+            font-size: 24px;
+            color: #5AB0A1;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #555;
+        }
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: #5AB0A1;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .instruction {
+            background: #f8f9fa;
+            border-left: 4px solid #5AB0A1;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .instruction p {
+            margin: 0;
+            color: #333;
+        }
+        .tip {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip p {
+            margin: 0;
+            color: #2e7d32;
+        }
+        .data-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .data-box p {
+            margin: 0;
+            color: #e65100;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #5AB0A1;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Slide 1: Title -->
+    <div class="slide title-slide">
+        <h1>GV App User Guide</h1>
+        <h2>Body, Breath & Beyond</h2>
+        <p>Profile & Settings</p>
+        <p style="margin-top: 50px; font-size: 14px;">iPhone SE View (375×667)</p>
+    </div>
+
+    <!-- Slide 2: Profile Page -->
+    <div class="slide">
+        <div class="slide-left">
+            <div class="step-number">1</div>
+            <h1>Profile Page</h1>
+            <p>Access your profile and account settings.</p>
+            
+            <div class="instruction">
+                <p><strong>Access:</strong> Tap "Profile" in the bottom navigation</p>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Available Options:</strong></p>
+                <ul class="feature-list">
+                    <li>Profile Detail</li>
+                    <li>Trainers</li>
+                    <li>Journal Notes</li>
+                    <li>FAQ</li>
+                    <li>Change Password</li>
+                    <li>Device Sessions</li>
+                    <li>Logout</li>
+                </ul>
+            </div>
+            
+            <div class="tip">
+                <p>💡 The profile page is your hub for account management.</p>
+            </div>
+        </div>
+        <div class="slide-right">
+            <img src="../screenshots/profile/35-profile-page.png" alt="Profile Page">
+        </div>
+        <div class="slide-number">2 / 8</div>
+    </div>
+
+    <!-- Slide 3: Profile Detail -->
+    <div class="slide">
+        <div class="slide-left">
+            <div class="step-number">2</div>
+            <h1>Profile Detail</h1>
+            <p>View and manage your personal information.</p>
+            
+            <div class="instruction">
+                <p><strong>Information Displayed:</strong></p>
+                <ul class="feature-list">
+                    <li>Name</li>
+                    <li>Phone Number</li>
+                    <li>Email</li>
+                    <li>City</li>
+                </ul>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Actions:</strong></p>
+                <ul class="feature-list">
+                    <li>Edit profile information</li>
+                    <li>Delete account (if needed)</li>
+                </ul>
+            </div>
+            
+            <div class="data-box">
+                <p>📝 Account deletion is permanent and cannot be undone.</p>
+            </div>
+        </div>
+        <div class="slide-right">
+            <img src="../screenshots/profile/36-profile-detail.png" alt="Profile Detail">
+        </div>
+        <div class="slide-number">3 / 8</div>
+    </div>
+
+    <!-- Slide 4: Trainers List -->
+    <div class="slide">
+        <div class="slide-left">
+            <div class="step-number">3</div>
+            <h1>Trainers List</h1>
+            <p>Browse available breathing instructors.</p>
+            
+            <div class="instruction">
+                <p><strong>Features:</strong></p>
+                <ul class="feature-list">
+                    <li>Search trainers by name</li>
+                    <li>View trainer profiles</li>
+                    <li>See trainer specializations</li>
+                </ul>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Action:</strong> Tap on a trainer to view their profile</p>
+            </div>
+            
+            <div class="tip">
+                <p>💡 Each trainer specializes in different breathing techniques.</p>
+            </div>
+        </div>
+        <div class="slide-right">
+            <img src="../screenshots/profile/37-trainers-list.png" alt="Trainers List">
+        </div>
+        <div class="slide-number">4 / 8</div>
+    </div>
+
+    <!-- Slide 5: Trainer Profile -->
+    <div class="slide">
+        <div class="slide-left">
+            <div class="step-number">4</div>
+            <h1>Trainer Profile</h1>
+            <p>View detailed information about a specific trainer.</p>
+            
+            <div class="instruction">
+                <p><strong>Information Displayed:</strong></p>
+                <ul class="feature-list">
+                    <li>Trainer photo</li>
+                    <li>Name and title</li>
+                    <li>Specialization</li>
+                    <li>Overview and experience</li>
+                </ul>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Action:</strong> Contact trainer via WhatsApp for questions</p>
+            </div>
+            
+            <div class="tip">
+                <p>💡 Trainers can provide personalized guidance for your practice.</p>
+            </div>
+        </div>
+        <div class="slide-right">
+            <img src="../screenshots/profile/38-trainer-profile.png" alt="Trainer Profile">
+        </div>
+        <div class="slide-number">5 / 8</div>
+    </div>
+
+    <!-- Slide 6: FAQ -->
+    <div class="slide">
+        <div class="slide-left">
+            <div class="step-number">5</div>
+            <h1>FAQ</h1>
+            <p>Find answers to frequently asked questions.</p>
+            
+            <div class="instruction">
+                <p><strong>Features:</strong></p>
+                <ul class="feature-list">
+                    <li>Search questions</li>
+                    <li>Filter by course type</li>
+                    <li>Expandable answers</li>
+                </ul>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Common Topics:</strong></p>
+                <ul class="feature-list">
+                    <li>Course structure</li>
+                    <li>Payment methods</li>
+                    <li>Prerequisites</li>
+                    <li>Refund policy</li>
+                </ul>
+            </div>
+            
+            <div class="tip">
+                <p>💡 Check FAQ before contacting support for quick answers.</p>
+            </div>
+        </div>
+        <div class="slide-right">
+            <img src="../screenshots/profile/40-faq.png" alt="FAQ">
+        </div>
+        <div class="slide-number">6 / 8</div>
+    </div>
+
+    <!-- Slide 7: Change Password -->
+    <div class="slide">
+        <div class="slide-left">
+            <div class="step-number">6</div>
+            <h1>Change Password</h1>
+            <p>Update your account password for security.</p>
+            
+            <div class="instruction">
+                <p><strong>Fields:</strong></p>
+                <ul class="feature-list">
+                    <li>Current Password</li>
+                    <li>New Password</li>
+                    <li>Confirm New Password</li>
+                </ul>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Password Requirements:</strong></p>
+                <ul class="feature-list">
+                    <li>One uppercase letter</li>
+                    <li>One lowercase character</li>
+                    <li>8 characters minimum</li>
+                    <li>One number</li>
+                </ul>
+            </div>
+            
+            <div class="data-box">
+                <p>📝 Use a strong, unique password for your account.</p>
+            </div>
+        </div>
+        <div class="slide-right">
+            <img src="../screenshots/profile/41-change-password.png" alt="Change Password">
+        </div>
+        <div class="slide-number">7 / 8</div>
+    </div>
+
+    <!-- Slide 8: Device Sessions -->
+    <div class="slide">
+        <div class="slide-left">
+            <div class="step-number">7</div>
+            <h1>Device Sessions</h1>
+            <p>Manage devices logged into your account.</p>
+            
+            <div class="instruction">
+                <p><strong>Information Displayed:</strong></p>
+                <ul class="feature-list">
+                    <li>Device name</li>
+                    <li>Sign-in date</li>
+                    <li>Current device indicator</li>
+                </ul>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Security:</strong> Review and revoke access for unrecognized devices</p>
+            </div>
+            
+            <div class="tip">
+                <p>💡 Regularly check device sessions for account security.</p>
+            </div>
+        </div>
+        <div class="slide-right">
+            <img src="../screenshots/profile/42-device-sessions.png" alt="Device Sessions">
+        </div>
+        <div class="slide-number">8 / 8</div>
+    </div>
+</body>
+</html>

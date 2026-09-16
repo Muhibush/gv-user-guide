@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GV App User Guide - Registration Journey</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+        .slide {
+            width: 1280px;
+            height: 720px;
+            background: white;
+            margin: 20px auto;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            display: flex;
+            position: relative;
+            page-break-after: always;
+        }
+        .slide-number {
+            position: absolute;
+            bottom: 20px;
+            right: 30px;
+            font-size: 12px;
+            color: #999;
+        }
+        .slide-left {
+            flex: 1;
+            padding-right: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .slide-right {
+            width: 375px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slide-right img {
+            max-width: 100%;
+            max-height: 667px;
+            border: 2px solid #ddd;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .title-slide {
+            background: linear-gradient(135deg, #5AB0A1 0%, #3d8b7f 100%);
+            color: white;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .title-slide h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .title-slide h2 {
+            font-size: 28px;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+        .title-slide p {
+            font-size: 18px;
+            margin-top: 30px;
+            opacity: 0.8;
+        }
+        .section-slide {
+            background: linear-gradient(135deg, #0F5590 0%, #1a73c7 100%);
+            color: white;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+        .section-slide h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+        .section-slide p {
+            font-size: 22px;
+            opacity: 0.9;
+        }
+        h1 {
+            font-size: 32px;
+            color: #222831;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        h2 {
+            font-size: 24px;
+            color: #5AB0A1;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #555;
+        }
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: #5AB0A1;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .instruction {
+            background: #f8f9fa;
+            border-left: 4px solid #5AB0A1;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .instruction p {
+            margin: 0;
+            color: #333;
+        }
+        .tip {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip p {
+            margin: 0;
+            color: #2e7d32;
+        }
+        .data-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .data-box p {
+            margin: 0;
+            color: #e65100;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #5AB0A1;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Slide 1: Title -->
+    <div class="slide title-slide">
+        <h1>GV App User Guide</h1>
+        <h2>Body, Breath & Beyond</h2>
+        <p>Registration Journey</p>
+        <p style="margin-top: 50px; font-size: 14px;">iPhone SE View (375×667)</p>
+    </div>
+
+    <!-- Slide 2: Welcome & Landing Page -->
+    <div class="slide">
+        <div class="slide-left">
+            <div class="step-number">1</div>
+            <h1>Welcome & Landing Page</h1>
+            <p>The first screen users see when opening the BBB app. This is the entry point for new and returning users.</p>
+            
+            <div class="instruction">
+                <p><strong>Step 1:</strong> Open the BBB app at staging-gv.muhibdev.biz.id</p>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Step 2:</strong> View the landing page with app branding and options</p>
+            </div>
+            
+            <div class="tip">
+                <p>💡 The landing page provides quick access to login or registration for new users.</p>
+            </div>
+        </div>
+        <div class="slide-right">
+            <img src="../screenshots/registration/01-landing.png" alt="Landing Page">
+        </div>
+        <div class="slide-number">2 / 11</div>
+    </div>
+
+    <!-- Slide 3: Onboarding 1 -->
+    <div class="slide">
+        <div class="slide-left">
+            <div class="step-number">2</div>
+            <h1>Onboarding - Essential</h1>
+            <p>The first onboarding screen introduces users to the importance of breathing.</p>
+            
+            <div class="instruction">
+                <p><strong>Key Message:</strong> "Breathing is essential for life and well-being"</p>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Action:</strong> Tap "Continue" to proceed to the next onboarding screen</p>
+            </div>
+            
+            <div class="tip">
+                <p>💡 Onboarding screens help users understand the value proposition before registering.</p>
+            </div>
+        </div>
+        <div class="slide-right">
+            <img src="../screenshots/registration/02-onboarding-1.png" alt="Onboarding 1">
+        </div>
+        <div class="slide-number">3 / 11</div>
+    </div>
+
+    <!-- Slide 4: Onboarding 2 -->
+    <div class="slide">
+        <div class="slide-left">
+            <div class="step-number">3</div>
+            <h1>Onboarding - Poor Breathing</h1>
+            <p>The second onboarding screen addresses common breathing problems.</p>
+            
+            <div class="instruction">
+                <p><strong>Key Message:</strong> "Most people breathe poorly without realizing it"</p>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Action:</strong> Tap "Continue" to proceed to the next onboarding screen</p>
+            </div>
+            
+            <div class="tip">
+                <p>💡 This screen helps users identify with the problem before presenting the solution.</p>
+            </div>
+        </div>
+        <div class="slide-right">
+            <img src="../screenshots/registration/03-onboarding-2.png" alt="Onboarding 2">
+        </div>
+        <div class="slide-number">4 / 11</div>
+    </div>
+
+    <!-- Slide 5: Onboarding 3 -->
+    <div class="slide">
+        <div class="slide-left">
+            <div class="step-number">4</div>
+            <h1>Onboarding - 5 Minutes</h1>
+            <p>The third onboarding screen emphasizes the minimal time commitment required.</p>
+            
+            <div class="instruction">
+                <p><strong>Key Message:</strong> "Just 5 minutes daily can make a difference"</p>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Action:</strong> Tap "Continue" to proceed to the next onboarding screen</p>
+            </div>
+            
+            <div class="tip">
+                <p>💡 Low time commitment reduces friction for new users to get started.</p>
+            </div>
+        </div>
+        <div class="slide-right">
+            <img src="../screenshots/registration/04-onboarding-3.png" alt="Onboarding 3">
+        </div>
+        <div class="slide-number">5 / 11</div>
+    </div>
+
+    <!-- Slide 6: Onboarding 4 -->
+    <div class="slide">
+        <div class="slide-left">
+            <div class="step-number">5</div>
+            <h1>Onboarding - Neuroscience</h1>
+            <p>The fourth onboarding screen adds scientific credibility to the approach.</p>
+            
+            <div class="instruction">
+                <p><strong>Key Message:</strong> "It's neuroscience - backed by research"</p>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Action:</strong> Tap "Continue" to proceed to health goals selection</p>
+            </div>
+            
+            <div class="tip">
+                <p>💡 Scientific backing builds trust and credibility with users.</p>
+            </div>
+        </div>
+        <div class="slide-right">
+            <img src="../screenshots/registration/05-onboarding-4.png" alt="Onboarding 4">
+        </div>
+        <div class="slide-number">6 / 11</div>
+    </div>
+
+    <!-- Slide 7: Health Goals -->
+    <div class="slide">
+        <div class="slide-left">
+            <div class="step-number">6</div>
+            <h1>Health Goal Selection</h1>
+            <p>Users select their wellness goals to personalize their experience.</p>
+            
+            <div class="instruction">
+                <p><strong>Step 1:</strong> View available health goals (Sleep, Stress, Focus, Energy, etc.)</p>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Step 2:</strong> Tap on goals that apply to you (multiple selection allowed)</p>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Step 3:</strong> Tap "Continue" to proceed to registration form</p>
+            </div>
+            
+            <div class="data-box">
+                <p>📝 Selected goals help tailor course recommendations and tracking.</p>
+            </div>
+        </div>
+        <div class="slide-right">
+            <img src="../screenshots/registration/06-health-goals.png" alt="Health Goals">
+        </div>
+        <div class="slide-number">7 / 11</div>
+    </div>
+
+    <!-- Slide 8: Registration Form -->
+    <div class="slide">
+        <div class="slide-left">
+            <div class="step-number">7</div>
+            <h1>Registration Form</h1>
+            <p>Complete the registration form with personal details.</p>
+            
+            <div class="instruction">
+                <p><strong>Required Fields:</strong></p>
+                <ul class="feature-list">
+                    <li>Full Name</li>
+                    <li>Email Address</li>
+                    <li>Phone Number</li>
+                    <li>Password</li>
+                    <li>Date of Birth</li>
+                    <li>City</li>
+                </ul>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Action:</strong> Fill in all fields and tap "Continue"</p>
+            </div>
+            
+            <div class="data-box">
+                <p>📝 All fields are required for account creation and verification.</p>
+            </div>
+        </div>
+        <div class="slide-right">
+            <img src="../screenshots/registration/07-registration-form.png" alt="Registration Form">
+        </div>
+        <div class="slide-number">8 / 11</div>
+    </div>
+
+    <!-- Slide 9: Review Details -->
+    <div class="slide">
+        <div class="slide-left">
+            <div class="step-number">8</div>
+            <h1>Review & Confirm Details</h1>
+            <p>Review all entered information before final submission.</p>
+            
+            <div class="instruction">
+                <p><strong>Step 1:</strong> Review all personal details displayed</p>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Step 2:</strong> Verify accuracy of name, email, phone, and other details</p>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Step 3:</strong> Tap "This is correct" to proceed to verification</p>
+            </div>
+            
+            <div class="tip">
+                <p>💡 Double-checking details prevents verification issues later.</p>
+            </div>
+        </div>
+        <div class="slide-right">
+            <img src="../screenshots/registration/08-review-details.png" alt="Review Details">
+        </div>
+        <div class="slide-number">9 / 11</div>
+    </div>
+
+    <!-- Slide 10: Phone OTP -->
+    <div class="slide">
+        <div class="slide-left">
+            <div class="step-number">9</div>
+            <h1>Phone Verification (OTP)</h1>
+            <p>Verify your phone number with a one-time password.</p>
+            
+            <div class="instruction">
+                <p><strong>Step 1:</strong> Check your phone for the SMS verification code</p>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Step 2:</strong> Enter the 6-digit code in the provided fields</p>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Step 3:</strong> Tap "Verify" to complete phone verification</p>
+            </div>
+            
+            <div class="tip">
+                <p>💡 The OTP code expires after a few minutes. Request a new code if needed.</p>
+            </div>
+        </div>
+        <div class="slide-right">
+            <img src="../screenshots/registration/09-phone-otp.png" alt="Phone OTP">
+        </div>
+        <div class="slide-number">10 / 11</div>
+    </div>
+
+    <!-- Slide 11: Email OTP -->
+    <div class="slide">
+        <div class="slide-left">
+            <div class="step-number">10</div>
+            <h1>Email Verification</h1>
+            <p>Verify your email address with a one-time password.</p>
+            
+            <div class="instruction">
+                <p><strong>Step 1:</strong> Check your email inbox for the verification code</p>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Step 2:</strong> Enter the 6-digit code in the provided fields</p>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Step 3:</strong> Tap "Verify" to complete email verification</p>
+            </div>
+            
+            <div class="tip">
+                <p>💡 Check your spam folder if you don't see the verification email.</p>
+            </div>
+        </div>
+        <div class="slide-right">
+            <img src="../screenshots/registration/10-email-otp.png" alt="Email OTP">
+        </div>
+        <div class="slide-number">11 / 11</div>
+    </div>
+
+    <!-- Slide 12: Registration Complete -->
+    <div class="slide">
+        <div class="slide-left">
+            <div class="step-number">11</div>
+            <h1>Registration Complete</h1>
+            <p>Successfully created your BBB account!</p>
+            
+            <div class="instruction">
+                <p><strong>Status:</strong> Your account has been created and verified</p>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Next Step:</strong> Tap "Let's go" to access your dashboard</p>
+            </div>
+            
+            <div class="tip">
+                <p>💡 You can now explore courses, track your progress, and start your breathing journey.</p>
+            </div>
+        </div>
+        <div class="slide-right">
+            <img src="../screenshots/registration/11-registration-complete.png" alt="Registration Complete">
+        </div>
+        <div class="slide-number">11 / 11</div>
+    </div>
+</body>
+</html>

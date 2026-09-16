@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GV App User Guide - Exercise Flow</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+        .slide {
+            width: 1280px;
+            height: 720px;
+            background: white;
+            margin: 20px auto;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            display: flex;
+            position: relative;
+            page-break-after: always;
+        }
+        .slide-number {
+            position: absolute;
+            bottom: 20px;
+            right: 30px;
+            font-size: 12px;
+            color: #999;
+        }
+        .slide-left {
+            flex: 1;
+            padding-right: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .slide-right {
+            width: 375px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slide-right img {
+            max-width: 100%;
+            max-height: 667px;
+            border: 2px solid #ddd;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .title-slide {
+            background: linear-gradient(135deg, #5AB0A1 0%, #3d8b7f 100%);
+            color: white;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .title-slide h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .title-slide h2 {
+            font-size: 28px;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+        .title-slide p {
+            font-size: 18px;
+            margin-top: 30px;
+            opacity: 0.8;
+        }
+        .section-slide {
+            background: linear-gradient(135deg, #0F5590 0%, #1a73c7 100%);
+            color: white;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+        .section-slide h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+        .section-slide p {
+            font-size: 22px;
+            opacity: 0.9;
+        }
+        h1 {
+            font-size: 32px;
+            color: #222831;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        h2 {
+            font-size: 24px;
+            color: #5AB0A1;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #555;
+        }
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: #5AB0A1;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .instruction {
+            background: #f8f9fa;
+            border-left: 4px solid #5AB0A1;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .instruction p {
+            margin: 0;
+            color: #333;
+        }
+        .tip {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip p {
+            margin: 0;
+            color: #2e7d32;
+        }
+        .data-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .data-box p {
+            margin: 0;
+            color: #e65100;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #5AB0A1;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Slide 1: Title -->
+    <div class="slide title-slide">
+        <h1>GV App User Guide</h1>
+        <h2>Body, Breath & Beyond</h2>
+        <p>Exercise Flow</p>
+        <p style="margin-top: 50px; font-size: 14px;">iPhone SE View (375×667)</p>
+    </div>
+
+    <!-- Slide 2: Exercise Preference -->
+    <div class="slide">
+        <div class="slide-left">
+            <div class="step-number">1</div>
+            <h1>Exercise Preference</h1>
+            <p>Configure your exercise settings before starting.</p>
+            
+            <div class="instruction">
+                <p><strong>Settings:</strong></p>
+                <ul class="feature-list">
+                    <li>Soundscape (On/Off)</li>
+                    <li>Vibration (On/Off)</li>
+                    <li>Voice Guide (On/Off)</li>
+                    <li>Buteyko Belt (On/Off)</li>
+                </ul>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Note:</strong> These preferences are asked once per exercise and can be changed anytime.</p>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Action:</strong> Tap "Submit" to start the exercise</p>
+            </div>
+            
+            <div class="tip">
+                <p>💡 Voice Guide is recommended for beginners to follow along.</p>
+            </div>
+        </div>
+        <div class="slide-right">
+            <img src="../screenshots/exercise/34-exercise-preference.png" alt="Exercise Preference">
+        </div>
+        <div class="slide-number">2 / 2</div>
+    </div>
+
+    <!-- Slide 3: Exercise Player -->
+    <div class="slide">
+        <div class="slide-left">
+            <div class="step-number">2</div>
+            <h1>Exercise Player</h1>
+            <p>Start and follow your breathing exercise.</p>
+            
+            <div class="instruction">
+                <p><strong>Interface Elements:</strong></p>
+                <ul class="feature-list">
+                    <li>Exercise title (e.g., "Basic 1")</li>
+                    <li>Progress indicators</li>
+                    <li>BOLT score display</li>
+                    <li>Control buttons (Play/Pause)</li>
+                </ul>
+            </div>
+            
+            <div class="instruction">
+                <p><strong>Actions:</strong></p>
+                <ul class="feature-list">
+                    <li>Tap "Start" to begin exercise</li>
+                    <li>Follow audio/visual cues</li>
+                    <li>Complete the session</li>
+                </ul>
+            </div>
+            
+            <div class="tip">
+                <p>💡 BOLT (Body Oxygen Level Test) measures your breathing efficiency.</p>
+            </div>
+        </div>
+        <div class="slide-right">
+            <img src="../screenshots/exercise/35-exercise-player.png" alt="Exercise Player">
+        </div>
+        <div class="slide-number">2 / 2</div>
+    </div>
+</body>
+</html>
