@@ -97,17 +97,7 @@ gv-knowledge/user-guides/
 
 ## Test Account
 
-**User Account:**
-- Email: `agungsantoso@gmail.com`
-- Password: `123qwe!Q`
-- Name: Agung Santoso
-- Phone: 081234567890
-- DOB: 15/01/1990
-- City: Kota Administrasi Jakarta Pusat
-
-**Admin Account:**
-- Email: `ayu-admin@gv.test`
-- Password: `123qwe!Q`
+Staging test accounts are available from the project owner on request.
 
 ## Payment Methods
 
