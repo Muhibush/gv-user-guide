@@ -97,7 +97,7 @@ gv-knowledge/user-guides/
 
 ## Test Account
 
-Staging test accounts are available from the project owner on request.
+Staging accounts for people trying the app are available from the project owner on request. Automated tests and `take-screenshots.py` never use them; they run with their own temporary accounts from the gv-qa test-data gate (gv-qa `docs/runbook.md` "Test data (the gate, D-028)" and `docs/decision-log.md` D-028). `take-screenshots.py` provisions the gate's `guide` profile, whose student `e2e-guide@e2e.test` has about 45 days of history (payment-flow shots use fresh per-run buyers instead), and purges it all at the end. Which account group may be used for what: [`../standards/test-accounts.md`](../standards/test-accounts.md).
 
 ## Payment Methods
 
